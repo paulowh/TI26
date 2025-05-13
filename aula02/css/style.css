@@ -1,0 +1,24 @@
+h1{
+    color: blue;
+}
+
+.corzinha{
+    color: tomato;
+    background-color: black;
+}
+
+
+p{
+    color: aliceblue;
+    background-color: tomato;
+    font-size: 30px;
+}
+
+img{
+    height: 400px;
+    width: 400px;
+    object-fit: cover;
+    background-color: tomato;
+    border: 10px solid black;
+    border-radius: 15px;
+}
