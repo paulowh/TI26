@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 03</title>
+</head>
+
+
+<style>
+
+    .texto{
+        background-color: tomato;
+        color: aliceblue;
+        font-size: 30px;
+    }
+
+    /* #texto {
+        background-color: black;
+    } */
+</style>
+
+<body>
+    <h1 class="texto">Aula de JS</h1>
+
+    <p class="texto" id="textoPersonalizado"  >Aqui vai meu texto personalizado</p>
+
+    <p>aqui não pode mudar o texto...</p>
+    <script>
+        
+        function funcaoTop() {
+            alert('minha função funcionou!!!')
+        }
+
+        function adicionarTexto(){
+            alert('deseja adionar o texto?')
+            // console.log(document.getElementById('textoPersonalizado').innerHTML)
+            // DOM -> DOCUMENT OBJECT MODEL
+            textoLocal = document.getElementById('textoPersonalizado').innerHTML
+            console.log(textoLocal)
+
+            document.getElementById('textoPersonalizado').innerHTML = 'Um texto do balacubaco'
+        
+        }
+
+
+        // funcaoTop()
+
+    </script>
+</body>
+
+</html>
