@@ -1,0 +1,27 @@
+@font-face {
+    font-family: 'Playpen';
+    src: url(../font/PlaypenSansDeva-VariableFont_wght.ttf);
+}
+
+*{
+    margin: 0;
+    font-family: 'Playpen';
+}
+
+.fundo{
+    justify-items: center;
+    text-align: center;
+    background-color: tomato;
+    height: 100vh;
+}
+
+.titulo {
+    font-size: 45px;
+    color: white;
+    font-style: bold;
+}
+
+.link{
+    color: white;
+    text-decoration: none;
+}
