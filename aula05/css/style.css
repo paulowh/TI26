@@ -5,9 +5,15 @@
     height: 100vh;
 }
 
+.grade {
+    display: grid;
+    grid-template-columns: 400px 400px 400px;
+    grid-template-rows: 500px 500px 500px;
+}
+
 .quadrado-pai{
     width: 270px;
-    height: 370px;
+    height: 400px;
 
     margin-top: 10px;
     margin-left: 100px;
@@ -32,10 +38,24 @@
     object-position: center;
 }
 
-.quadrado-pai figcaption h1 {
-    /* margin-top: 30px; */
-    /* margin: 15px; */
+.quadrado-pai a {
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+    text-transform: lowercase;
+    font-family: 'Trebuchet MS';
+
+    background-color: #012030;
+    
+    padding: 5px;
+    border-radius: 20px;
+    border: 3px solid #DAFDBA;
+    transition: 0.3s;
 }
-.quadrado-pai figcaption p {
-    /* margin: 15px; */
+
+.quadrado-pai a:hover{
+    border: 3px solid #012030;
+    background-color: #DAFDBA;
+    color: #012030;
+    transition: 0.3s;
 }
