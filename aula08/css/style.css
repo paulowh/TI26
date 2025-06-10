@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+section{
+    height: 100vh;
+    background-color: tomato;
+}
+
+#saiba-mais{
+    background-color: crimson;
+}
+
+#banner{
+    background-color: tomato;
+}
+
+#sobre{
+    background-color: cadetblue;
+}
