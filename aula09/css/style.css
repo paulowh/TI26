@@ -9,8 +9,7 @@
     font-weight: 300;
 }
 
-.dados-pessoais,
-.dados-contato {
+.dados-pessoais, .dados-contato>div {
     display: flex;
     flex-direction: column;
 }
@@ -23,4 +22,47 @@
 .dados-contato strong,
 .dados-pessoais strong {
     text-transform: capitalize;
+}
+.dados-contato>div {
+    width: 50%;
+    margin: 0 auto;
+    border: 2px solid black;
+    border-radius: 20px;
+    box-shadow: 3px 3px 10px rgba(37, 51, 62, 0.522);
+}
+
+.formacao>h3,.experiencia>h3,.cursos>h3,.projetos>h3 {
+    border-bottom: 1px solid #cbd0d4;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+.cartao {
+    display: flex;
+    flex-direction: column;
+
+    border: 2px solid black;
+    border-radius: 15px;
+
+    padding: 10px;
+
+    transition: ease-out 0.2s;
+}
+.cartao:hover {
+
+    transition: ease-out 0.2s;
+    scale: 1.02;
+    box-shadow: 3px 3px 10px rgba(37, 51, 62, 0.522);
+}
+
+.formacao .cartao{
+    height: 100px;
+}
+
+.experiencia .cartao{
+    height: 210px;
+}
+
+.formacao .cartao span,
+.experiencia .cartao span{
+    font-weight: 700;
 }
