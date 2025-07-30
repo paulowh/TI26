@@ -1,0 +1,9 @@
+.card-title {
+    text-transform: capitalize;
+}
+
+.pokemon-img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+}
