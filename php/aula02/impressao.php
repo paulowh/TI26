@@ -17,6 +17,8 @@
         $senhaForm = $_POST['txtSenha'];
         $senhaConfirmarForm = $_POST['txtConfirmarSenha'];
 
+        $query = 'SELECT * FROM tb_cadastro '
+
     ?>
     <main class="conteudo-principal container d-flex justify-content-center align-items-center">
         <section class="formulario d-flex flex-column justify-content-center bg-white p-4">

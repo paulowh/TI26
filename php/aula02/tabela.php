@@ -12,7 +12,7 @@
 
 $dsn = 'mysql:dbname=db_cadastro;host=127.0.0.1';
 $usuario = 'root';
-$senha = ''; 
+$senha = '';
 
 $conexaoBanco = new PDO($dsn, $usuario, $senha);
 
@@ -21,7 +21,6 @@ $scriptConsulta = 'SELECT * FROM tb_cadastro';
 
 $resultadoConsulta = $conexaoBanco->query($scriptConsulta)->fetchAll();
 
-var_dump($resultadoConsulta)
 ?>
 
 <body class="bg-light">
@@ -39,19 +38,19 @@ var_dump($resultadoConsulta)
                             <th scope="col">Ações</th>
                         </tr>
                     <tbody class="text-center">
-                        <?php foreach ($resultadoConsulta as $linha)  { ?>
-                        <tr>
-                            <th scope="row"> <?= $linha['id'] ?>  </th>
-                            <td><?= $linha['nome'] ?></td>
-                            <td><?= $linha['telefone'] ?></td>
-                            <td><?= $linha['usuario'] ?></td>
-                            <td>
-                                <button class="btn btn-primary btn-sm">Abrir</button>
-                                <button class="btn btn-warning btn-sm">Editar</button>
-                                <button class="btn btn-danger btn-sm">Excluir</button>
-                            </td>
-                        </tr>
-                        <?php }?>
+                        <?php foreach ($resultadoConsulta as $linha) { ?>
+                            <tr>
+                                <th scope="row"> <?= $linha['id'] ?> </th>
+                                <td><?= $linha['nome'] ?></td>
+                                <td><?= $linha['telefone'] ?></td>
+                                <td><?= $linha['usuario'] ?></td>
+                                <td>
+                                    <a href="./impressao.php?idConsulta=<?= $linha['id'] ?>" class="btn btn-primary btn-sm">Abrir</a>
+                                    <a class="btn btn-warning btn-sm">Editar</a>
+                                    <a class="btn btn-danger btn-sm">Excluir</a>
+                                </td>
+                            </tr>
+                        <?php } ?>
 
                     </tbody>
                 </table>
