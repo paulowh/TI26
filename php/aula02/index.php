@@ -10,22 +10,49 @@ if (isset($_GET['erro']) && $_GET['erro'] == 'sim') {
         </div>';
 }
 
+$nome = '';
+$telefone = '';
+$usuario = '';
+$tituloFormulario = 'Cadastrar Usuario';
+$actionFormulario = './form-cadastro.php';
+
+if (isset($_GET['id']) && !empty($_GET['id'])) {
+    $id = $_GET['id'];
+    $dsn = 'mysql:dbname=db_cadastro;host=127.0.0.1';
+    $usuario = 'root';
+    $senha = '';
+
+    $conn = new PDO($dsn, $usuario, $senha);
+
+    $scriptSelect = "SELECT * FROM tb_cadastro WHERE id = $id";
+
+    $dadosSelect = $conn->query($scriptSelect)->fetch();
+
+    $nome = $dadosSelect['nome'];
+    $telefone = $dadosSelect['telefone'];
+    $usuario = $dadosSelect['usuario'];
+    $tituloFormulario = 'Atualizar Usuario';
+    $actionFormulario = './form-atualizar.php';
+}
+
 ?>
 <main class="conteudo-principal container d-flex justify-content-center align-items-center">
     <section class="formulario bg-white p-4">
-        <h1 class="fs-2 text-center">Formulario</h1>
-        <form action="./form-cadastro.php" method="POST">
+
+        <h1 class="fs-2 text-center"><?= $tituloFormulario ?></h1>
+        <form action="<?= $actionFormulario ?>" method="POST">
+            <input type="hidden" name="txtId" value="<?= $id ?>">
             <div class="mb-3">
                 <label for="txtNome" class="form-label">Nome</label>
-                <input required name="txtNome" type="text" class="form-control" id="txtNome" placeholder="">
+                <input value="<?= $nome ?>" required name="txtNome" type="text" class="form-control" id="txtNome" placeholder="">
             </div>
             <div class="mb-3">
                 <label for="txtTelefone" class="form-label">Telefone</label>
-                <input required name="txtTelefone" type="numeber" class="form-control" id="txtTelefone" placeholder="(xx) xxxxx-xxxx">
+                <input value="<?= $telefone ?>" required name="txtTelefone" type="numeber" class="form-control" id="txtTelefone" placeholder="(xx) xxxxx-xxxx">
             </div>
             <div class="mb-3">
                 <label for="txtUsuario" class="form-label">Usuario</label>
-                <input required name="txtUsuario" type="text" class="form-control" id="txtUsuario" placeholder="">
+                <input value="<?= $usuario ?>" required name="txtUsuario" type="text" class="form-control" id="txtUsuario" placeholder="">
             </div>
             <div class="mb-3">
                 <label for="txtSenha" class="form-label">Senha</label>
